@@ -223,7 +223,7 @@ func timeTrack(start time.Time, name string) {
 func pullStats() {
 	rds, err := client.DialWithConfig(&client.DialConfig{Address: config.RedisConnectionString, Password: config.RedisAuthToken})
 	if err != nil {
-		log.Fatalf("puller unable to connect:", err.Error())
+		log.Fatalf("puller unable to connect: %s", err.Error())
 	}
 	lbkey := "leaderboard:" + TTT.Name
 	for {
