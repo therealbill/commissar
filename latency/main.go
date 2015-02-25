@@ -6,7 +6,6 @@ import (
 	"log"
 	"log/syslog"
 	"os"
-	"runtime/pprof"
 	"strings"
 	"time"
 
@@ -64,8 +63,8 @@ var session *mgo.Session
 
 func init() {
 	// initialize logging
-	logger, err := syslog.New(syslog.LOG_INFO|syslog.LOG_DAEMON, "golatency")
-	err = envconfig.Process("golatency", &config)
+	logger, err := syslog.New(syslog.LOG_INFO|syslog.LOG_DAEMON, "latency")
+	err = envconfig.Process("latency", &config)
 	if err != nil {
 		if logger != nil {
 			logger.Warning(err.Error())
@@ -118,22 +117,23 @@ func testLatency() {
 }
 
 func main() {
-	if config.ProfileCPU {
-		f, err := os.Create("cpuprofile.out")
-		if err != nil {
-			log.Fatal(err)
+	/*
+		if config.ProfileCPU {
+			f, err := os.Create("cpuprofile.out")
+			if err != nil {
+				log.Fatal(err)
+			}
+			pprof.StartCPUProfile(f)
+			defer pprof.StopCPUProfile()
 		}
-		pprof.StartCPUProfile(f)
-		defer pprof.StopCPUProfile()
-	}
-	/*if config.ProfileMemory {
-		f, err := os.Create("memoryprofile.out")
-		if err != nil {
-			log.Fatal(err)
+		if config.ProfileMemory {
+			f, err := os.Create("memoryprofile.out")
+			if err != nil {
+				log.Fatal(err)
+			}
+			pprof.StartMemoryProfile(f)
+			defer pprof.StopMemoryProfile()
 		}
-		pprof.StartMemoryProfile(f)
-		defer pprof.StopMemoryProfile()
-	}
 	*/
 	iterations := config.Iterations
 	_, err := client.DialWithConfig(&client.DialConfig{Address: config.RedisConnectionString, Password: config.RedisAuthToken})
