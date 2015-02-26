@@ -35,3 +35,17 @@ COMMISSAR_GAMESERVERCOUNT
 COMMISSAR_POOLSIZE       
 COMMISSAR_PIPELINE      
 COMMISSAR_GAMENAME     
+
+
+## Medium-term - Develop and Document Use Cases
+
+
+The goal here is to develop a specific set of uses cases along with their
+implementation from the Redis usage pattern. With common use cases defined and
+implemented we will be able to develop tests which 
+  a) Demonstrate the use case
+  b) document how and why it works the way it does, and 
+  c) show how it performs.
+
+As we develop these we will also be able to implement these in various
+languages with multiple client side libraries.
