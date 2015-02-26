@@ -1,4 +1,4 @@
-package main // import "github.com/therealbill/commissar"
+package main
 
 import (
 	"bytes"
