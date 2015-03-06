@@ -49,3 +49,11 @@ implemented we will be able to develop tests which
 
 As we develop these we will also be able to implement these in various
 languages with multiple client side libraries.
+
+# Get Involved!
+
+Fork the repo, add stuff, submit issues (a great place to make suggestions for
+use cases). There is also a Google group for the more in-depth conversations:
+commissar@googlegroups.com
+
+
