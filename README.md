@@ -1,3 +1,6 @@
+[![Build
+Status](https://travis-ci.org/TheRealBill/commissar.svg?branch=master)](https://travis-ci.org/TheRealBill/commissar)
+
 # Commissar: A Redis Use-Case Performance testing framework
 
 This is the beginning of a general use-case based Redis performance testing
