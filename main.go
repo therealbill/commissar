@@ -251,7 +251,7 @@ func main() {
 		}
 	}
 	runtime.ReadMemStats(&m)
-	fmt.Printf("%d,%d,%d,%d\n", m.HeapSys, m.HeapAlloc, m.HeapIdle, m.HeapReleased)
+	//fmt.Printf("%d,%d,%d,%d\n", m.HeapSys, m.HeapAlloc, m.HeapIdle, m.HeapReleased)
 	h := metrics.Get("latency:full").(metrics.Histogram)
 	snap := h.Snapshot()
 	cmdstats, err := ds.Info()
@@ -274,7 +274,7 @@ func main() {
 	b, _ := json.Marshal(config)
 	report.WriteString(string(b))
 	commands_processed := int64(post_command_count - initial_command_count)
-	report.WriteString(fmt.Sprintf("\n%d commands_processed in %v\n", commands_processed, time.Duration(snap.Sum())))
+	//report.WriteString(fmt.Sprintf("\n%d commands_processed in %v\n", commands_processed, time.Duration(snap.Sum())))
 	num_seconds := float64(snap.Sum()) / float64(time.Second)
 	cps := float64(commands_processed) / num_seconds
 	gps := float64(config.TotalMatches) / num_seconds
@@ -295,7 +295,7 @@ func main() {
 		report.WriteString(fmt.Sprintf("%.2f%%: %v\n", b*100, d))
 	}
 	server_time := int64(post_command_time - initial_command_time)
-	log.Printf("snap.Sum(): %v\n", snap.Sum())
+	//log.Printf("snap.Sum(): %v\n", snap.Sum())
 	total_time := int64(snap.Sum())
 	net_time := total_time - server_time
 	server_pct := float64(server_time) / float64(total_time)
