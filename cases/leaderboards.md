@@ -19,6 +19,19 @@ b) Last Score
 c) Points gained
 d) Combinations of the above
 
+# Leaderboard Tunables
+
+A leaderboard will need to have a variable number of users, variable number of
+matches per user, variable numbers of game servers and readers, and
+controllable number of iterations.
+
+# Leaderboard Output
+
+There are two key metrics for leaderboards:
+  - How many game results per second can we process?
+  - How many leaderboard views per second can we process?
+
+
 
 # Implementation Variants
 
@@ -42,20 +55,5 @@ players based on the last score they receveid.
 In this scenario the players earn, or lose, a number of points. Wins or
 losses are irrelevant. Thus we modify the running total at the game's
 conclusion and display ranking based on current score.
-
-
-# Leaderboard Tunables
-
-A leaderboard will need to have a variable number of users, variable number of
-matches per user, variable numbers of game servers and readers, and
-controllable number of iterations.
-
-# Leaderboard Output
-
-There are two key metrics for leaderboards:
-  - How many game results per second can we process?
-  - How many leaderboard views per second can we process?
-
-
 
 
