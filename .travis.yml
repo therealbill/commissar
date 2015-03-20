@@ -3,3 +3,7 @@ language: go
 go:
   - 1.4.1
   - tip
+
+
+notifications:
+  slack: thebaldguy:nO9qaCeYBcPMu9ocQGQFwZIO
